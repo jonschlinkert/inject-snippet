@@ -1,0 +1,48 @@
+{
+  "name": "inject-snippet",
+  "description": "Inject a snippet of code or content into a string.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/inject-snippet",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/inject-snippet",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/inject-snippet/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": [
+    "add",
+    "block",
+    "cli",
+    "code",
+    "inject",
+    "insert",
+    "replace",
+    "snippet"
+  ],
+  "verb": {
+    "related": {
+      "list": [
+        "snippet",
+        "scaffold",
+        "assemble",
+        "verb",
+        "boilerplate"
+      ]
+    }
+  }
+}
