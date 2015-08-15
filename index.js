@@ -42,20 +42,18 @@ function inject(existing, snippet, opts) {
     }
     var head = trimRight(existing.slice(0, i + slen));
     var inner = trimLeft(existing.slice(i + slen, e));
-
+    var tail = trimLeft(existing.slice(e));
     existing = action === 'add' ? inner : '';
-    var tail = existing.slice(e);
-
-    return head + '\n' + existing + snippet + '\n' + tail;
+    return head + existing + snippet + tail;
   }
 
   var res = snippet;
 
   if (opts.placeholders) {
     res = '';
-    res += end ? (start + '\n') : '';
+    res += end ? start : '';
     res += snippet;
-    res += end ? ('\n' + end) : '';
+    res += end ? end : '';
   }
   return existing.split(start).join(res);
 };

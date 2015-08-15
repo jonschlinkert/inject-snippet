@@ -8,7 +8,7 @@ describe('inject', function () {
   it('should inject a snippet into a string with placeholders:', function () {
     var str = 'before <!-- snippet --> after';
     var actual = inject(str, 'foo');
-    actual.should.equal('before <!-- snippet -->\nfoo\n<!-- endsnippet --> after');
+    actual.should.equal('before <!-- snippet -->foo<!-- endsnippet --> after');
   });
 
   it('should inject a snippet into a string without placeholders:', function () {
