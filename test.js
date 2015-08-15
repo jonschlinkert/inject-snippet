@@ -8,12 +8,12 @@ describe('inject', function () {
   it('should inject a snippet into a string with placeholders:', function () {
     var str = 'before <!-- snippet --> after';
     var actual = inject(str, 'foo');
-    actual.should.equal('before <!-- snippet -->foo<!-- endsnippet --> after');
+    actual.should.equal('before\n<!-- snippet -->\nfoo\n<!-- endsnippet -->\nafter\n');
   });
 
   it('should inject a snippet into a string without placeholders:', function () {
     var str = 'before <!-- snippet --> after';
-    inject(str, 'foo', {placeholders: false}).should.equal('before foo after');
+    inject(str, 'foo', {stripPlaceholders: true}).should.equal('before\nfoo\nafter\n');
   });
 
   it('should throw an error when invalid arguments are passed:', function () {
