@@ -15,7 +15,7 @@ function inject(str, snippet, opts) {
 
   opts = opts || {};
   var delims = opts.delimiters || ['<!--', '-->'];
-  var name = opts.marker || 'snippet';
+  var name = opts.tag || 'snippet';
   var regex = opts.regex || toRegex(name, delims);
   var open = openDelim(name, delims, opts);
   var close = closeDelim(name, delims, opts);
@@ -25,7 +25,7 @@ function inject(str, snippet, opts) {
   var sections = split(str, regex, opts);
   var contents = stripTags(snippet, regex, opts);
 
-  // no snippet markers, so just append the string
+  // no snippet delimiters found, so just append the string
   if (sections.length === 1 && opts.append !== false) {
     return str;
   }
@@ -150,7 +150,7 @@ module.exports = inject;
 module.exports.stripTags = function (str, opts) {
   opts = opts || {};
   var delims = opts.delimiters || ['<!--', '-->'];
-  var name = opts.marker || 'snippet';
+  var name = opts.tag || 'snippet';
   var regex = opts.regex || toRegex(name, delims);
   return stripTags(str, regex, opts);
 };

@@ -2,18 +2,18 @@ var inject = require('..');
 
 // var layout1 = inject('a {{!< layout }} b', 'this is content\n', {
 //   delims: ['{{!<', '}}'],
-//   marker: 'layout',
+//   tag: 'layout',
 //   action: 'append'
 // });
 // var layout2 = inject('c {{!< layout }} d', layout1, {
 //   delims: ['{{!<', '}}'],
-//   marker: 'layout',
+//   tag: 'layout',
 //   action: 'append'
 // });
 // var layout3 = inject('d {{!< layout }} e', layout2, {
 //   stripPlaceholders: true,
 //   delims: ['{{!<', '}}'],
-//   marker: 'layout',
+//   tag: 'layout',
 //   action: 'append'
 // });
 
@@ -25,7 +25,7 @@ var inject = require('..');
 // d
 // e
 
-var opts = { delimiters: ['{{!<', '}}'], marker: 'layout', action: 'append' };
+var opts = { delimiters: ['{{!<', '}}'], tag: 'layout', action: 'append' };
 opts.newlines = true;
 
 var layout1 = inject('a {{!< layout }} b', 'this is content', opts);
