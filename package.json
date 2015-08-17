@@ -1,7 +1,7 @@
 {
   "name": "inject-snippet",
   "description": "Inject a snippet of code or content into a string.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/jonschlinkert/inject-snippet",
   "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
   "repository": "jonschlinkert/inject-snippet",
