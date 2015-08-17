@@ -16,6 +16,8 @@ $ npm i inject-snippet --save
 var inject = require('inject-snippet');
 ```
 
+**Keep placeholders**
+
 Inject a snippet into a string with placeholders (used for subsequent insertions):
 
 ```js
@@ -24,12 +26,37 @@ inject(str, 'foo');
 //=> 'before <!-- snippet -->\nfoo\n<!-- endsnippet --> after'
 ```
 
+**Strip placeholders**
+
 Inject a snippet into a string without placeholders:
 
 ```js
 var str = 'before <!-- snippet --> after';
 inject(str, 'foo', {stripTags: true})
 //=> 'before foo after'
+```
+
+**Use a custom tag name**
+
+Customize the placeholder name:
+
+```js
+var str = 'before <!-- xyz --> after';
+inject(str, 'foo', {tag: 'xyz'})
+//=> 'before foo after'
+```
+
+**Use custom delimiters**
+
+Customize the placeholder delimiters:
+
+```js
+var str = '<body>\n\n</body>';
+inject(str, 'foo', {delimiters: ['']});
+// results in:
+// <body>
+// foo
+// </body>
 ```
 
 ## Related projects
