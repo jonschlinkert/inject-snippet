@@ -27,7 +27,7 @@ function inject(str, snippet, opts) {
 
   // no snippet markers, so just append the string
   if (sections.length === 1 && opts.append !== false) {
-    return str + contents;
+    return str;
   }
 
   var start = emit(sections.shift(), opts);
