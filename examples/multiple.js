@@ -1,6 +1,6 @@
 var inject = require('..');
 
-var multi = inject('a <!-- snippet --> b <!-- snippet --> c <!-- snippet --> d <!-- snippet --> e <!-- endsnippet --> f', 'blah\n');
+var multi = inject('a <!-- snippet --> b <!-- snippet --> c <!-- snippet --> d <!-- snippet --> e <!-- endsnippet --> f', 'blah\n', {newlines: true});
 console.log(multi);
 
 // a

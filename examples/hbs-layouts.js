@@ -1,14 +1,15 @@
 var inject = require('..');
 
 var layout1 = inject('a {{!< layout }} b', 'this is content\n', {
-  stripPlaceholders: true,
-  delims: ['{{!<', '}}'],
+  newlines: true,
+  delimiters: ['{{!<', '}}'],
   marker: 'layout',
   action: 'replace'
 });
 var layout2 = inject('c {{!< layout }} d', layout1, {
-  stripPlaceholders: true,
-  delims: ['{{!<', '}}'],
+  stripTags: true,
+  newlines: true,
+  delimiters: ['{{!<', '}}'],
   marker: 'layout',
   action: 'replace'
 });
